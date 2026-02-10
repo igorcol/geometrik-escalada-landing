@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+interface NavbarProps {
+  onOpenAuth: () => void;
+}
+
 const NAV_LINKS = [
   { label: "Modalidades", href: "#modalidades" },
   { label: "Comunidade", href: "#comunidade" },
@@ -11,7 +15,7 @@ const NAV_LINKS = [
   { label: "Localização", href: "#localizacao" },
 ] as const;
 
-export function Navbar() {
+export function Navbar({ onOpenAuth }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -58,10 +62,10 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Button
-            asChild
+            onClick={onOpenAuth}
             className="bg-neon-cyan text-background font-bold tracking-wider text-sm glow-cyan glow-cyan-hover transition-all duration-300 hover:bg-neon-cyan/90"
           >
-            <a href="#planos">FACA SEU CADASTRO</a>
+            FAÇA SEU CADASTRO
           </Button>
         </div>
 
@@ -92,13 +96,14 @@ export function Navbar() {
               </a>
             ))}
             <Button
-              asChild
               size="lg"
               className="mt-4 bg-neon-cyan text-background font-bold tracking-wider glow-cyan"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                onOpenAuth();
+              }}
             >
-              <a href="#planos" onClick={() => setIsMobileMenuOpen(false)}>
-                FACA SEU CADASTRO
-              </a>
+              FAÇA SEU CADASTRO
             </Button>
           </div>
         </div>

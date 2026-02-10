@@ -2,6 +2,10 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+interface PricingSectionProps {
+  onOpenAuth: () => void;
+}
+
 interface PricingPlan {
   name: string;
   badge?: string;
@@ -55,7 +59,7 @@ const PLANS: PricingPlan[] = [
   },
 ];
 
-function PricingCard({ plan }: { plan: PricingPlan }) {
+function PricingCard({ plan, onOpenAuth }: { plan: PricingPlan; onOpenAuth: () => void }) {
   return (
     <article
       className={cn(
@@ -115,7 +119,7 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
       {/* CTA */}
       <div className="mt-8">
         <Button
-          asChild
+          onClick={onOpenAuth}
           className={cn(
             "w-full font-bold tracking-wider transition-all duration-300",
             plan.highlighted
@@ -124,14 +128,14 @@ function PricingCard({ plan }: { plan: PricingPlan }) {
           )}
           size="lg"
         >
-          <a href="#planos">{plan.cta}</a>
+          {plan.cta}
         </Button>
       </div>
     </article>
   );
 }
 
-export function PricingSection() {
+export function PricingSection({ onOpenAuth }: PricingSectionProps) {
   return (
     <section
       id="planos"
@@ -156,7 +160,7 @@ export function PricingSection() {
         {/* Pricing Cards */}
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3 items-start">
           {PLANS.map((plan) => (
-            <PricingCard key={plan.name} plan={plan} />
+            <PricingCard key={plan.name} plan={plan} onOpenAuth={onOpenAuth} />
           ))}
         </div>
       </div>

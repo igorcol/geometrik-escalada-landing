@@ -3,10 +3,13 @@
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const HERO_VIDEO_URL =
-  "/images/geometrik-video.mp4";
+interface HeroSectionProps {
+  onOpenAuth: () => void;
+}
 
-export function HeroSection() {
+const HERO_VIDEO_URL = "/images/geometrik-video.mp4";
+
+export function HeroSection({ onOpenAuth }: HeroSectionProps) {
   return (
     <section
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
@@ -44,11 +47,11 @@ export function HeroSection() {
 
         <div className="mt-10">
           <Button
-            asChild
+            onClick={onOpenAuth}
             size="lg"
             className="bg-neon-cyan text-background font-bold tracking-widest text-base px-10 py-6 glow-cyan glow-cyan-hover transition-all duration-300 hover:bg-neon-cyan/90 hover:scale-105"
           >
-            <a href="#planos">QUERO ESCALAR AGORA</a>
+            QUERO ESCALAR AGORA
           </Button>
         </div>
       </div>
