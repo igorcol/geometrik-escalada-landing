@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "comunidade",
   ],
   openGraph: {
-    title: "Geometrik Escalada | Desafie a Gravidade",
+    title: "Geometrik Escalada",
     description:
       "A comunidade de escalada mais vibrante da cidade. Do iniciante ao pro, seu lugar é na parede.",
     type: "website",
