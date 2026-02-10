@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 7% 6%;
+    --foreground: 0 0% 95%;
+    --card: 240 5% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 5% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 165 100% 50%;
+    --primary-foreground: 240 7% 6%;
+    --secondary: 330 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 165 100% 50%;
+    --accent-foreground: 240 7% 6%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 20%;
+    --input: 240 4% 20%;
+    --ring: 165 100% 50%;
+    --radius: 0.5rem;
+
+    --neon-cyan: 165 100% 50%;
+    --neon-magenta: 330 100% 50%;
+    --surface-dark: 240 7% 6%;
+    --surface-elevated: 240 5% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px hsl(165 100% 50% / 0.4), 0 0 60px hsl(165 100% 50% / 0.1);
+}
+
+.glow-cyan-hover:hover {
+  box-shadow: 0 0 30px hsl(165 100% 50% / 0.6), 0 0 80px hsl(165 100% 50% / 0.2);
+}
+
+.glow-magenta {
+  box-shadow: 0 0 20px hsl(330 100% 50% / 0.4), 0 0 60px hsl(330 100% 50% / 0.1);
+}
+
+/* Neon text glow */
+.neon-text-cyan {
+  text-shadow: 0 0 10px hsl(165 100% 50% / 0.5), 0 0 40px hsl(165 100% 50% / 0.2);
+}
+
+/* Card glow border on hover */
+.card-glow {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-glow:hover {
+  border-color: hsl(165 100% 50% / 0.5);
+  box-shadow: 0 0 20px hsl(165 100% 50% / 0.15), inset 0 0 20px hsl(165 100% 50% / 0.05);
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Parallax scroll hint */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
