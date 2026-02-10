@@ -6,12 +6,13 @@ interface CommunityImage {
 }
 
 const COMMUNITY_IMAGES: CommunityImage[] = [
-  { src: "/images/community-1.jpg", alt: "Escaladores se divertindo no boulder" },
-  { src: "/images/community-2.jpg", alt: "Comunidade reunida na Geometrik" },
-  { src: "/images/community-3.jpg", alt: "Escalador em parede de boulder" },
-  { src: "/images/community-4.jpg", alt: "Amigos celebrando conquista na escalada" },
-  { src: "/images/community-5.jpg", alt: "Treino em grupo na Geometrik" },
-  { src: "/images/community-6.jpg", alt: "Escaladora concentrada no boulder" },
+  { src: "/images/img-1.jpg", alt: "" },
+  { src: "/images/img-2.jpg", alt: "" },
+  { src: "/images/img-3.jpg", alt: "" },
+  { src: "/images/img-4.jpg", alt: "" },
+  { src: "/images/img-5.jpg", alt: "" },
+  { src: "/images/img-6.jpg", alt: "" },
+  { src: "/images/img-7.jpg", alt: "" },
 ];
 
 function MarqueeRow({ images, direction = "left" }: { images: CommunityImage[]; direction?: "left" | "right" }) {
@@ -64,8 +65,7 @@ export function SocialProofSection() {
             <span className="text-neon-cyan neon-text-cyan">SUA SEGUNDA CASA.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-foreground/60 text-pretty">
-            Aqui a gente treina sério, mas não se leva a sério. Vibe única e
-            gente boa.
+            Esqueça a competição. Aqui a gente comemora sua vitória como se fosse a nossa.
           </p>
         </div>
       </div>
