@@ -2,8 +2,8 @@
 
 import { MessageCircle } from "lucide-react";
 
-const WHATSAPP_NUMBER = "5511999999999";
-const WHATSAPP_MESSAGE = "Olá! Quero saber mais sobre a Geometrik Escalada.";
+const WHATSAPP_NUMBER = "5515991093960";
+const WHATSAPP_MESSAGE = "Olá! Vi o design do site da academia GEOMETRIK ESCALADA. Gostaria de fazer um orçamento para um site";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export function WhatsAppButton() {

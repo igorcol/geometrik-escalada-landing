@@ -35,12 +35,11 @@ export function HeroSection() {
         <h1 className="font-display text-5xl leading-tight tracking-tight text-foreground md:text-7xl lg:text-8xl text-balance">
           DESAFIE A GRAVIDADE.
           <br />
-          <span className="neon-text-cyan text-neon-cyan">ENCONTRE SUA TRIBO.</span>
+          <span className="neon-text-cyan text-neon-cyan">GEOMETRIK ESCALADA.</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground/70 md:text-xl text-pretty">
-          A comunidade de escalada mais vibrante da cidade. Do iniciante ao pro,
-          seu lugar é na parede.
+          O treino mais viciante de Sorocaba.
         </p>
 
         <div className="mt-10">
