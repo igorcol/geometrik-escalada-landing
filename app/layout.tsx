@@ -16,7 +16,7 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata: Metadata = {
-  title: "Geometrik Escalada | Desafie a Gravidade",
+  title: "Geometrik Escalada",
   description:
     "A comunidade de escalada mais vibrante da cidade. Do iniciante ao pro, seu lugar é na parede. Boulder, escalada esportiva e muito mais.",
   keywords: [
